@@ -5,6 +5,7 @@ import Header from "./Header";
 import About from "./About";
 import Experience from "./Experience";
 import SkillsSection from "./Skills";
+import ProjectsSection from "./Projects";
 
 function Portfolio() {
   return (
@@ -16,6 +17,7 @@ function Portfolio() {
         <About />
         <Experience />
         <SkillsSection />
+        <ProjectsSection />
       </div>
     </div>
   );
