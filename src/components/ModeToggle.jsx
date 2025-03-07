@@ -1,18 +1,19 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { MoonIcon, SunIcon } from "lucide-react";
+import useThemeStore from "@/store/themeStore";
 
 const ModeToggle = () => {
-  const [theme, setTheme] = useState("light");
+  const { theme, setTheme } = useThemeStore();
 
   useEffect(() => {
-    // On component mount, check if there's a theme stored in localStorage
+    // Check theme stored in LocalStorage
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
       setTheme(savedTheme);
       document.documentElement.classList.toggle("dark", savedTheme === "dark");
     }
-  }, []);
+  }, [setTheme]);
 
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
@@ -26,7 +27,7 @@ const ModeToggle = () => {
       variant="ghost"
       type="button"
       size="icon"
-      className="px-2"
+      className="px-2 pb-2"
       onClick={toggleTheme}
     >
       <SunIcon className="h-[1.2rem] w-[1.2rem] text-neutral-800 dark:hidden dark:text-neutral-200" />

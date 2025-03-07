@@ -2,13 +2,40 @@ import React from "react";
 import { motion } from "framer-motion";
 import { BoxReveal } from "@/components/magicui/box-reveal";
 
+// WordAnimation Component
 const WordAnimation = () => (
-  <GradientText
-    className="font-display text-center text-2xl font-bold tracking-[-0.05em] sm:text-3xl md:text-4xl lg:text-5xl p-2"
-    text="Hi, I'm Sriram"
-  />
+  <div className="flex justify-center">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: { opacity: 1 },
+        visible: {
+          opacity: 1,
+          transition: {
+            staggerChildren: 0.05,
+          },
+        },
+      }}
+    >
+      {Array.from("Hi, I'm Sriram").map((letter, index) => (
+        <motion.span
+          key={index}
+          className="inline-block"
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          {letter === " " ? "\u00A0" : letter}
+        </motion.span>
+      ))}
+    </motion.div>
+  </div>
 );
 
+// GradientText Component
 const GradientText = ({ text, className }) => (
   <motion.h1
     className={`bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent ${className}`}
@@ -20,6 +47,7 @@ const GradientText = ({ text, className }) => (
   </motion.h1>
 );
 
+// SubTitle Component
 const SubTitle = () => (
   <motion.div
     className="w-full text-center mt-4 flex justify-center"
@@ -35,11 +63,15 @@ const SubTitle = () => (
   </motion.div>
 );
 
+// Header Component
 const Header = () => {
   return (
     <div className="flex flex-col items-center px-4 gap-10 py-12">
       <div className="text-center my-4">
-        <WordAnimation />
+        <GradientText
+          className="font-display text-center font-bold tracking-[-0.05em] text-4xl lg:text-6xl md:p-2"
+          text={<WordAnimation />}
+        />
         <div className="mt-2 text-center">
           <SubTitle />
         </div>

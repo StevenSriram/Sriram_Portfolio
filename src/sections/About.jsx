@@ -64,6 +64,7 @@ const About = () => {
           />
         </motion.div>
       </motion.div>
+
       <div className="md:w-2/3 md:pl-6">
         <motion.h2
           className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 dark:text-gray-200 text-center md:text-left"
@@ -71,6 +72,7 @@ const About = () => {
         >
           About Me
         </motion.h2>
+
         <motion.p
           className="text-sm md:text-base text-gray-600 dark:text-gray-400 text-center md:text-left mb-4"
           variants={itemVariants}
@@ -80,8 +82,9 @@ const About = () => {
           React.js, and Node.js, I bring ideas to life through robust and
           scalable applications.
         </motion.p>
+
         <motion.p
-          className="text-sm md:text-base text-gray-600 dark:text-gray-400 text-center md:text-left"
+          className="text-sm md:text-base text-gray-600 dark:text-gray-400 text-center md:text-left mb-4"
           variants={itemVariants}
         >
           My commitment to continuous learning ensures cutting-edge solutions
