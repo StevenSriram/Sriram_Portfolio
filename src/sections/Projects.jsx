@@ -2,172 +2,127 @@ import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import { Globe, Github } from "lucide-react";
 
+import auth from "../assets/auth.jpg";
+import ecommerce from "../assets/ecommerce.jpg";
+import admin from "../assets/admin.jpg";
+import gui from "../assets/gui.jpg";
+import logistics from "../assets/logistics.jpg";
+
 const projects = [
   {
-    title: "Turf Spot",
+    title: "MERN Authentication with All Features",
     description:
-      "TurfSpot is a MERN stack application for booking turf grounds, featuring User, Owner, and Admin modules. Users can book turfs, manage bookings, and apply to become owners. Owners can add turfs and manage bookings. Admins oversee user management and transactions, ensuring a smooth booking experience.",
+      "A complete MERN stack authentication system with features like secure login/signup, password strength meter, forgot password functionality, JWT token-based authentication, and welcome email on registration.",
     technologies: [
       "React.js",
-      "JavaScript",
-      "MongoDB",
-      "Express.js",
-      "Node.js",
       "Tailwind CSS",
-      "Razorpay",
-      "Daisy UI",
+      "Framer Motion",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "bcryptjs",
+      "MailTrap",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "https://steve-mern-auth.onrender.com/",
+        icon: <Globe className="w-4 h-4" />,
+      },
+      {
+        type: "Source",
+        href: "https://github.com/StevenSriram/MERN_Auth",
+        icon: <Github className="w-4 h-4" />,
+      },
+    ],
+    image: auth,
+  },
+  {
+    title: "ShopSphere - Versatile E-Commerce Platform",
+    description:
+      "ShopSphere is a comprehensive e-commerce platform that connects manufacturers and customers, offering a centralized marketplace for various products. The platform provides seamless B2C transactions with features such as user authentication, product browsing, cart management, order processing, and secure PayPal payments.",
+    technologies: [
+      "React.js",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
       "Cloudinary",
       "Redux Toolkit",
-      "Redux Persist",
+      "PayPal",
     ],
     links: [
       {
         type: "Website",
-        href: "https://turf-spot.vercel.app/",
+        href: "https://steve-mern-ecommerce.onrender.com/",
         icon: <Globe className="w-4 h-4" />,
       },
       {
         type: "Source",
-        href: "https://github.com/RijoKsd/TurfSpot",
+        href: "https://github.com/StevenSriram/MERN_Ecommerce",
         icon: <Github className="w-4 h-4" />,
       },
     ],
-    image: "https://picsum.photos/500/300?random=1", // Random image from Picsum
+    image: ecommerce,
   },
   {
-    title: "Expense Tracker",
+    title: "ShopSphere Admin Dashboard",
     description:
-      "Expense-Tracker is a MERN stack application that helps users manage their monthly expenses. It features secure login with JWT, an adjustable monthly expense limit, and tools to add, view, and delete expenses. The app also provides a graphical overview of the remaining balance and allows users to track expenses across different months",
+      "A fully functional admin dashboard for the ShopSphere e-commerce platform. It includes product management, order management, banner and discount functionality, allowing admins to control product listings, track orders, and manage promotional offers.",
     technologies: [
       "React.js",
-      "TypeScript",
-      "MongoDB",
-      "Express.js",
-      "Node.js",
       "Tailwind CSS",
-      "Mantine UI",
-    ],
-    links: [
-      {
-        type: "Website",
-        href: "https://expense-log.vercel.app/",
-        icon: <Globe className="w-4 h-4" />,
-      },
-      {
-        type: "Source",
-        href: "https://github.com/RijoKsd/Expense-Tracker",
-        icon: <Github className="w-4 h-4" />,
-      },
-    ],
-    image: "https://picsum.photos/500/300?random=2", // Random image from Picsum
-  },
-  {
-    title: "Chat Application",
-    description:
-      "I created a real-time chat application using the MERN stack, incorporating JWT authentication and Socket.io for seamless communication. Users can send messages to different users in real time, and the system provides instant notifications whenever they receive new messages, ensuring smooth and interactive conversations.",
-    technologies: [
-      "React.js",
-      "JavaScript",
-      "MongoDB",
-      "Express.js",
+      "Shadcn UI",
       "Node.js",
-      "Tailwind CSS",
-      "Daisy UI",
-      "Socket.io",
-    ],
-    links: [
-      {
-        type: "Website",
-        href: "https://chat-application-in4i.onrender.com/",
-        icon: <Globe className="w-4 h-4" />,
-      },
-      {
-        type: "Source",
-        href: "https://github.com/RijoKsd/Chat-Application",
-        icon: <Github className="w-4 h-4" />,
-      },
-    ],
-    image: "https://picsum.photos/500/300?random=3", // Random image from Picsum
-  },
-  {
-    title: "Food Delivery App",
-    description:
-      "Food Delivery App is a user-friendly application that allows users to browse and purchase food items from various menus. It features an admin section for managing products and orders, including adding new items, updating order statuses, and viewing all products. The app also includes a dummy Stripe payment integration and product filtering options for users",
-    technologies: [
-      "React.js",
-      "JavaScript",
-      "MongoDB",
       "Express.js",
-      "Node.js",
-      "Tailwind CSS",
-      "Stripe",
-      "Zustand",
-    ],
-    links: [
-      {
-        type: "Website",
-        href: "https://food-delivery-app-fe.vercel.app/",
-        icon: <Globe className="w-4 h-4" />,
-      },
-      {
-        type: "Source",
-        href: "https://github.com/RijoKsd/food-delivery-app",
-        icon: <Github className="w-4 h-4" />,
-      },
-    ],
-    image: "https://picsum.photos/500/300?random=4", // Random image from Picsum
-  },
-  {
-    title: "TODO App",
-    description:
-      "Todo App is a full-stack application built with the MERN stack, offering users the ability to register, log in, and reset their password using an OTP sent via email. It supports complete CRUD operations for managing todos, allows users to view pending and completed tasks, and provides options to view and edit their profile. JWT protected routes ensure secure access throughout the application.",
-    technologies: [
-      "React.js",
-      "JavaScript",
       "MongoDB",
-      "Express.js",
-      "Node.js",
-      "Bootstrap",
-    ],
-    links: [
-      {
-        type: "Website",
-        href: "https://todo-app-mern-fe.vercel.app/",
-        icon: <Globe className="w-4 h-4" />,
-      },
-      {
-        type: "Source",
-        href: "https://github.com/RijoKsd/Todo-App-Mern",
-        icon: <Github className="w-4 h-4" />,
-      },
-    ],
-    image: "https://picsum.photos/500/300?random=5", // Random image from Picsum
-  },
-  {
-    title: "E-Commerce Website",
-    description:
-      "E-Store is a React-based e-commerce site that lets users manage their cart by adding, deleting, and updating products, and completing purchases. It uses Redux Toolkit and Context API for state management, Redux Persist for localStorage, and features styling with Tailwind CSS and Daisy UI. The app includes smooth animations",
-    technologies: [
-      "React.js",
-      "JavaScript",
-      "Tailwind CSS",
-      "Daisy UI",
+      "Cloudinary",
       "Redux Toolkit",
-      "Redux Persist",
     ],
     links: [
       {
         type: "Website",
-        href: "https://react-estore-app.vercel.app/",
+        href: "https://steve-mern-ecommerce.onrender.com/",
         icon: <Globe className="w-4 h-4" />,
       },
       {
         type: "Source",
-        href: "https://github.com/RijoKsd/E-Store",
+        href: "https://github.com/StevenSriram/MERN_Ecommerce",
         icon: <Github className="w-4 h-4" />,
       },
     ],
-    image: "https://picsum.photos/500/300?random=6", // Random image from Picsum
+    image: admin,
+  },
+  {
+    title: "LogiFlow – Smart Logistics & Transportation Management",
+    description:
+      "LogiFlow is a logistics management system designed to optimize transportation by ensuring the availability of suitable vehicles and personnel for efficient loading and unloading. The platform helps organizations manage the movement of goods seamlessly, ensuring timely and secure deliveries.",
+    technologies: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Leaflet.js",
+      "Stripe",
+    ],
+    links: [
+      {
+        type: "Source",
+        href: "https://github.com/StevenSriram/MERN_Auth",
+        icon: <Github className="w-4 h-4" />,
+      },
+    ],
+    image: logistics,
+  },
+  {
+    title: "FitHub – Workout Guide",
+    description:
+      "FitHub is a Java desktop application that lets users enter their fitness details and view workout routines based on their selected level (Beginner, Intermediate, Advanced).",
+    technologies: ["Java", "Swing", "JDBC", "MySQL Database"],
+    links: [],
+    image: gui,
   },
 ];
 

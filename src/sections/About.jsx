@@ -38,7 +38,7 @@ const About = () => {
 
   return (
     <motion.div
-      className="flex flex-col md:flex-row items-center justify-between w-full max-w-4xl p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg"
+      className="flex flex-col md:flex-row items-center justify-between w-full max-w-4xl p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg mx-auto"
       variants={containerVariants}
       initial="hidden"
       animate="visible"

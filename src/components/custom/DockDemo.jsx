@@ -63,17 +63,17 @@ const DATA = {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "#",
+        url: "https://github.com/StevenSriram",
         icon: Icons.github,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "#",
+        url: "https://www.linkedin.com/in/stevensriram/",
         icon: Icons.linkedin,
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "sriram242004@gmailcom",
         icon: Icons.email,
       },
     },
@@ -82,7 +82,7 @@ const DATA = {
 
 const DockDemo = () => {
   return (
-    <div className="fixed bottom-0 left-0 right-0 flex w-full flex-col items-center justify-end overflow-hidden pb-8">
+    <div className="fixed bottom-0 left-0 right-0 z-1000 flex w-full flex-col items-center justify-end overflow-hidden pb-8">
       <TooltipProvider>
         <Dock magnification={65} distance={100}>
           {DATA.navbar.map((item) => (
